@@ -1,0 +1,45 @@
+{
+  "name": "perahuruwa",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "cd android && gradlew clean && cd .. && react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@react-native-community/masked-view": "^0.1.10",
+    "@react-navigation/native": "^5.7.0",
+    "@react-navigation/stack": "^5.7.0",
+    "react": "16.13.1",
+    "react-native": "0.63.1",
+    "react-native-gesture-handler": "^1.6.1",
+    "react-native-reanimated": "^1.9.0",
+    "react-native-safe-area-context": "^3.1.1",
+    "react-native-screens": "^2.9.0",
+    "react-native-splash-screen": "^3.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/node": "^7.10.5",
+    "@babel/runtime": "^7.8.4",
+    "@react-native-community/eslint-config": "^1.1.0",
+    "babel-jest": "^25.1.0",
+    "babel-plugin-fbt": "^0.15.0",
+    "babel-plugin-fbt-runtime": "^0.9.12",
+    "babel-preset-react-native": "^4.0.1",
+    "eslint": "^6.5.1",
+    "fb-tiger-hash": "^0.1.6",
+    "fbt": "^0.15.0",
+    "jest": "^25.1.0",
+    "metro-react-native-babel-preset": "^0.59.0",
+    "react-native-fbt": "^0.0.1",
+    "react-test-renderer": "16.13.1",
+    "shelljs": "^0.8.4"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
