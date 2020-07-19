@@ -1,14 +1,38 @@
-import React from 'react'
-import { View, Text, Button } from 'react-native'
-import styles from "./styles";
+import React from 'react';
+import {View, Text, Button} from 'react-native';
+import styles from './styles';
+import {useTranslation} from 'react-i18next';
+import {getSelectedLanguage} from '../../../i18n';
 
 const HomePage = ({navigation}) => {
-    return (
-        <View style={styles.container}>
-            <Text>Home Page</Text>
-            <Button title="Next" onPress={e=>navigation.navigate('LanguageSelectionPage')} />
-        </View>
-    )
-}
+  const {t, i18n} = useTranslation();
 
-export default HomePage
+  const changeLanguageHandler = () => {
+    i18n
+      .changeLanguage('RESET')
+      .then(() => {
+        navigation.navigate('LanguageSelectionPage');
+      })
+      .catch(console.log);
+  };
+
+  const toggle = (e) => {
+    navigation.navigate('Drawer');
+  };
+
+  return (
+    <View style={styles.container}>
+      <Button
+        style={{margin: 15}}
+        title={i18n.language}
+        onPress={changeLanguageHandler}
+      />
+      <Text>Home Page</Text>
+      <Text>selected : {getSelectedLanguage()}</Text>
+      <Text>{t('test.hello')}</Text>
+      <Button title="Next" onPress={(e) => navigation.navigate('Categories')} />
+    </View>
+  );
+};
+
+export default HomePage;
